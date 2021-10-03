@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+
+    <div class= "text-center py-4">
+        <h3>Welcome to Acmepy</h3>
+        <h5 style="color: grey">Let's Encrypt Client </h5>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="card m-4 p-3" style="width:300px" >
+            <div class="card-body">
+                <h5 class="card-title">About Let's Encrypt</h5>
+                <p class="card-text">Let's Encrypt is a free, automated, and open certificate authority brought to you by the nonprofit Internet Security Research Group (ISRG).</p>
+                <a href="https://letsencrypt.org/about/" target="_blank" class="btn btn-dark ">Visit Site</a>
+            </div>
+        </div>
+    
+        <div class="card m-4 p-3" style="width:300px" >
+            <div class="card-body">
+                <h5 class="card-title">Let's Encrypt Docs</h5>
+                <p class="card-text">Getting Started with let's encrypt, Subscriber information i.e. rate limits, expiration limits etc. Includes Client Developement information</p>
+                <a href="https://letsencrypt.org/docs/#" target="_blank" class="btn btn-dark ">Visit Site</a>
+            </div>
+        </div>
+
+        <div class="card m-4 p-3" style="width:300px" >
+            <div class="card-body">
+                <h5 class="card-title">Let's Encrypt FAQ's</h5>
+                <p class="card-text">General and Technical Frequently asked questions related to Let's Encrypt e.g types of certificates, validaty and issuance of wildcard certificates</p>
+                <a href="https://letsencrypt.org/docs/faq/" target="_blank" class="btn btn-dark">Visit Site</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
