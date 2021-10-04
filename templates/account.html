@@ -1,4 +1,57 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="py-5 container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                No Account available, please add or create one.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-6">
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active " data-toggle="tab" href="#menu1">Create</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#menu2">Add</a>
+                </li>
+              </ul>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6 tab-content">
+            <div id="menu1" class="tab-pane active"><br>
+                <h5>Create new Account</h5>
+                <p>Note: Download the account-key when successfully logged in for logging in another time</p>
+
+                <form enctype="multipart/form-data" action="/account" method="get">
+                  <div class="form-group">
+                        <input type="text" placeholder="Enter email address" class="form-control"  id="email"  name="email">
+                  </div>
+                  <button class="btn btn-success" type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div id="menu2" class="tab-pane"><br>
+                <h5>Add Account Key</h5>
+                <p>Please upload the existing account key to add</p>
+                <form action="/account" method="get">
+                    <div class="form-group">
+                        <label for="formFileSm" class="form-label">Select a file: </label>
+                        <input class="form-control-sm" type="file">
+                    </div>
+                    <button class="btn btn-success" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
