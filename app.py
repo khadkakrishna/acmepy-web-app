@@ -13,5 +13,9 @@ def home():
 def account():
     return render_template("account.html")
 
+@app.route("/createCert")
+def createCert():
+    return render_template("create_cert.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
