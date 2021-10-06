@@ -1,6 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
-<div>
-    Here goes the cert view content
+<div class="py-5 col-6 container">
+    <div class="row table-responsive">
+        <table class="table" id="certTableId">
+            <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tbody>
+                {% for cert in certsList %}
+                    <tr>
+                        <td>{{ cert['name']}}</td>
+                        <td>{{ cert['status']}}</td>
+                        {% if cert['status']=='READY' %}
+                            <td><input type="button" class="btn btn-outline-success" value="view"></td>
+                            <td><input type="button" class="btn btn-outline-success" value="download"></td>
+                        {% else %}
+                            <td><input type="button" class="btn btn-outline-danger disabled" value="view"></td>
+                            <td><input type="button" class="btn btn-outline-danger disabled" value="download"></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 {% endblock %}

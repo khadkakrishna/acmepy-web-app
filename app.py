@@ -17,13 +17,15 @@ def account():
 def createCert():
     return render_template("create_cert.html")
 
+demo_data= [{ 'name': "cert1", 'status': 'READY'}, { 'name': "cert2", 'status': 'FAILED'}]
+
 @app.route("/viewCert")
 def viewCert():
-    return render_template("view_cert.html")
+    return render_template("view_cert.html", certsList=demo_data)
 
 @app.route("/manageCert")
 def manageCert():
-    return render_template("manage_cert.html")
+    return render_template("manage_cert.html", certsList=demo_data)
 
 if __name__ == "__main__":
     app.run(debug=True)

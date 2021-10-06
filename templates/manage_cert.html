@@ -1,6 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
-<div>
-    Here goes the cert manage content
+<div class="py-5 col-6 container">
+    <div class="row table-responsive">
+        <table class="table" id="certTableId">
+            <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tbody>
+                {% for cert in certsList %}
+                    <tr>
+                        <td>{{ cert['name']}}</td>
+                        <td>{{ cert['status']}}</td>
+                        {% if cert['status']=='READY' %}
+                            <td><input type="button" class="btn btn-success" value="renew"></td>
+                            <td><input type="button" class="btn btn-success" value="revoke"></td>
+                            <td><input type="button" class="btn btn-danger" value="delete"></td>
+                        {% else %}
+                            <td><input type="button" class="btn btn-outline-success disabled" value="renew"></td>
+                            <td><input type="button" class="btn btn-outline-success disabled" value="revoke"></td>
+                            <td><input type="button" class="btn btn-danger" value="delete"></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 {% endblock %}
