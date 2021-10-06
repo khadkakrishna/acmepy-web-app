@@ -17,5 +17,13 @@ def account():
 def createCert():
     return render_template("create_cert.html")
 
+@app.route("/viewCert")
+def viewCert():
+    return render_template("view_cert.html")
+
+@app.route("/manageCert")
+def manageCert():
+    return render_template("manage_cert.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
